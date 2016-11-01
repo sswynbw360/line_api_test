@@ -1,12 +1,6 @@
 <?php
 
-
-
-
-
 require('../vendor/autoload.php');
-
-
 
 //POST
 
@@ -18,9 +12,9 @@ $event = $json->events[0];
 
 
 
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('zhvKsOOA3F09IbOkr26vawp7coqjKVcdOCGUmdKW1KvJ/gIpz/B8vq/JdhFrwwTi5EdpwgFYWbyPWKka/EfsRlWVoga3FtoC5peDFf5lU6Xax5cX18znSX9s+d47IPb1y/bPFMfFnmMD1Db6v1RU+wdB04t89/1O/w1cDnyilFU=');
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('OvxAonnSUuCByCAiQ4wG0Q+zY7wTwTgvgxxe52foKRdDf5W8umsFwn1P6yMYXYzthRRzaeqdrpot7ZlQGLc8oOcDEtGOQcAvDMBGCb7p414ugd3O96abmreqgIuks4tPrzY7nSq8z+zxJZsjY4M0BQdB04t89/1O/w1cDnyilFU=');
 
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77d574f6714aa59abe2a2e5db99b5edb']);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '28624147ebfe7c7c27c3103e475c9403']);
 
 
 
@@ -94,7 +88,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			    'Content-Type: application/json; charser=UTF-8',
-			    'Authorization: Bearer ' . 'zhvKsOOA3F09IbOkr26vawp7coqjKVcdOCGUmdKW1KvJ/gIpz/B8vq/JdhFrwwTi5EdpwgFYWbyPWKka/EfsRlWVoga3FtoC5peDFf5lU6Xax5cX18znSX9s+d47IPb1y/bPFMfFnmMD1Db6v1RU+wdB04t89/1O/w1cDnyilFU='
+			    'Authorization: Bearer ' . 'OvxAonnSUuCByCAiQ4wG0Q+zY7wTwTgvgxxe52foKRdDf5W8umsFwn1P6yMYXYzthRRzaeqdrpot7ZlQGLc8oOcDEtGOQcAvDMBGCb7p414ugd3O96abmreqgIuks4tPrzY7nSq8z+zxJZsjY4M0BQdB04t89/1O/w1cDnyilFU='
 			    ));
 			$result = curl_exec($ch);
 			curl_close($ch);
@@ -142,7 +136,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			    'Content-Type: application/json; charser=UTF-8',
-			    'Authorization: Bearer ' . 'zhvKsOOA3F09IbOkr26vawp7coqjKVcdOCGUmdKW1KvJ/gIpz/B8vq/JdhFrwwTi5EdpwgFYWbyPWKka/EfsRlWVoga3FtoC5peDFf5lU6Xax5cX18znSX9s+d47IPb1y/bPFMfFnmMD1Db6v1RU+wdB04t89/1O/w1cDnyilFU='
+			    'Authorization: Bearer ' . 'OvxAonnSUuCByCAiQ4wG0Q+zY7wTwTgvgxxe52foKRdDf5W8umsFwn1P6yMYXYzthRRzaeqdrpot7ZlQGLc8oOcDEtGOQcAvDMBGCb7p414ugd3O96abmreqgIuks4tPrzY7nSq8z+zxJZsjY4M0BQdB04t89/1O/w1cDnyilFU='
 			    ));
 			$result = curl_exec($ch);
 			curl_close($ch);
