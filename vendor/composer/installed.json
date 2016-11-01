@@ -1,0 +1,102 @@
+[
+    {
+        "name": "linecorp/line-bot-sdk",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/line/line-bot-sdk-php.git",
+            "reference": "439e09646de7725e7703fcb153eb805222c4f0d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/439e09646de7725e7703fcb153eb805222c4f0d7",
+            "reference": "439e09646de7725e7703fcb153eb805222c4f0d7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "apigen/apigen": "~4.1",
+            "phpmd/phpmd": "~2.4",
+            "phpunit/phpunit": "^4.8.24",
+            "squizlabs/php_codesniffer": "~2.6"
+        },
+        "time": "2016-10-19 07:19:32",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "LINE\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache License Version 2.0"
+        ],
+        "authors": [
+            {
+                "name": "moznion",
+                "email": "moznion@gmail.com"
+            },
+            {
+                "name": "Satoru Yoshihara",
+                "email": "vaduz0@gmail.com"
+            }
+        ],
+        "description": "SDK of the LINE BOT API for PHP",
+        "homepage": "https://github.com/line/line-bot-sdk-php",
+        "keywords": [
+            "bot",
+            "line",
+            "sdk"
+        ]
+    },
+    {
+        "name": "heroku/heroku-buildpack-php",
+        "version": "v113",
+        "version_normalized": "113.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/heroku/heroku-buildpack-php.git",
+            "reference": "af7089595b889690df2594044c8626068178f739"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/af7089595b889690df2594044c8626068178f739",
+            "reference": "af7089595b889690df2594044c8626068178f739",
+            "shasum": ""
+        },
+        "time": "2016-10-19 23:42:40",
+        "bin": [
+            "bin/heroku-hhvm-apache2",
+            "bin/heroku-hhvm-nginx",
+            "bin/heroku-php-apache2",
+            "bin/heroku-php-nginx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Zuelke",
+                "email": "dz@heroku.com"
+            }
+        ],
+        "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
+        "homepage": "https://github.com/heroku/heroku-buildpack-php",
+        "keywords": [
+            "apache",
+            "apache2",
+            "foreman",
+            "heroku",
+            "hhvm",
+            "nginx",
+            "php"
+        ]
+    }
+]
