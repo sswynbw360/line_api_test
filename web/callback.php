@@ -59,6 +59,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
       }
     }
 // カラムの配列を組み合わせてカルーセルを作成する
+      new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("あなたの役職は", "人狼です", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action0]);
       $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 // カルーセルを追加してメッセージを作る
       $carousel_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("メッセージのタイトル", $carousel);
