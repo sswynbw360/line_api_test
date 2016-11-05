@@ -22,7 +22,17 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '28624147ebfe7c7c27c31
 
 if ("message" == $event->type) {            //一般的なメッセージ(文字・イメージ・音声・位置情報・スタンプ含む)
 
-    if ("@bye" == $event->message->text && ("group" == $event->source->type || "room" == $event->source->type)) {
+    if ("@myjob" == $event->message->text && ("room" == $event->source->type)) {
+      $action0 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NU", "nu");
+        $action1 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NO", "no");
+         $action2 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NE", "ne");
+
+         $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("ひげ", "ひげげ", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action0, $action1, $action2]);
+         $button_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ひげがここにボタンで表示されてるよ", $button);
+
+
+         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ぬ");
+         $response = $bot->pushMessage($event->to, $button_message);
     	/*if("group" == $event->source->type) {
     		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
     		$response2 = $bot->replyMessage($event->replyToken, $textMessageBuilder);
