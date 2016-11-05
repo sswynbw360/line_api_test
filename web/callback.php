@@ -23,7 +23,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '28624147ebfe7c7c27c31
 if ("message" == $event->type) {            //一般的なメッセージ(文字・イメージ・音声・位置情報・スタンプ含む)
 
     if ("@myjob" == $event->message->text) {
-      $action0 = new MessageTemplateActionBuilder("了解", "わかった");
+      $action0 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("了解", "わかった");
 
          $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("あなたの役職は", "人狼です", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action0]);
          $button_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("あなたの役職が表示されてるよ", $button);
@@ -45,6 +45,21 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
     } else if ("@join" == $event->message->text) {
+      $columns = []; // カルーセル型カラムを5つ追加する配列
+      foreach ($lists as $list) {
+    // カルーセルに付与するボタンを作る
+      $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("クリックしてね", "hwjj");
+    // カルーセルのカラムを作成する
+      $column = new CarouselColumnTemplateBuilder("タイトル(40文字以内)", "追加文", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action]);
+    $columns[] = $column;
+}
+// カラムの配列を組み合わせてカルーセルを作成する
+$carousel = new CarouselTemplateBuilder($columns);
+// カルーセルを追加してメッセージを作る
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
+$carousel_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("メッセージのタイトル", $carousel);
+$response = $bot->pushMessage($event->source->userId, $carousel_message);
+
 
     } else if ("text" == $event->message->type) {
 
