@@ -57,7 +57,7 @@ foreach ($lists as $list) {
 $carousel = new CarouselTemplateBuilder($columns);
 // カルーセルを追加してメッセージを作る
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
-$carousel_message = new TemplateMessageBuilder("メッセージのタイトル", $carousel);
+$carousel_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("メッセージのタイトル", $carousel);
 $response = $bot->pushMessage($event->source->userId, $carousel_message);
 
 		}
