@@ -22,7 +22,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '28624147ebfe7c7c27c31
 
 if ("message" == $event->type) {            //一般的なメッセージ(文字・イメージ・音声・位置情報・スタンプ含む)
 
-    if ("@myjob" == $event->message->text && ("room" == $event->source->type)) {
+    if ("@myjob" == $event->message->text) {
       $action0 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NU", "nu");
         $action1 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NO", "no");
          $action2 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("NE", "ne");
