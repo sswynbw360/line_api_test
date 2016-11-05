@@ -51,7 +51,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
     // カルーセルに付与するボタンを作る
       $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("クリックしてね", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg");
     // カルーセルのカラムを作成する
-      $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("タイトル(40文字以内)","http://www.hivelocity.co.jp/wp-content/uploads/2015/09/001.jpg" , [$action]);
+      $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("タイトル(40文字以内)","https://www.hivelocity.co.jp/wp-content/uploads/2015/09/001.jpg" , [$action]);
       $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("$a");
       $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
       $columns[] = $column;
