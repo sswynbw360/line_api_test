@@ -55,9 +55,10 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
       $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("$a");
       $response = $bot->pushMessage($event->source->userId, $textMessageBuilder);
       $columns[] = $column;
+      $a++;
     }
 // カラムの配列を組み合わせてカルーセルを作成する
-      $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+      $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder("アババババば",$columns);
 // カルーセルを追加してメッセージを作る
       $carousel_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("メッセージのタイトル", $carousel);
       $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
