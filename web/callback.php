@@ -32,7 +32,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
          $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ぬ");
-         $response = $bot->pushMessage($event->to, $button_message);
+         $response = $bot->pushMessage($event->source->userId, $button_message);
     	/*if("group" == $event->source->type) {
     		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
     		$response2 = $bot->replyMessage($event->replyToken, $textMessageBuilder);
