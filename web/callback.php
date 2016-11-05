@@ -29,7 +29,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
          $button_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("あなたの役職が表示されてるよ", $button);
 
 
-         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\TextMessageBuilder("");
+         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
          $response = $bot->pushMessage($event->source->userId, $button_message);
     	/*if("group" == $event->source->type) {
     		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
