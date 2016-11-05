@@ -56,6 +56,7 @@ foreach ($lists as $list) {
 // カラムの配列を組み合わせてカルーセルを作成する
 $carousel = new CarouselTemplateBuilder($columns);
 // カルーセルを追加してメッセージを作る
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
 $carousel_message = new TemplateMessageBuilder("メッセージのタイトル", $carousel);
 
 		}
