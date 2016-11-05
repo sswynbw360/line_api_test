@@ -50,7 +50,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
     // カルーセルに付与するボタンを作る
       $action = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("クリックしてね", "hwjj");
     // カルーセルのカラムを作成する
-      $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("タイトル(40文字以内)", "追加文", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action]);
+      $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("タイトル(40文字以内)", "追加文", ["https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg"], [$action]);
       $columns[] = $column;
       }
 // カラムの配列を組み合わせてカルーセルを作成する
