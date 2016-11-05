@@ -23,7 +23,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '28624147ebfe7c7c27c31
 if ("message" == $event->type) {            //一般的なメッセージ(文字・イメージ・音声・位置情報・スタンプ含む)
 
     if ("@myjob" == $event->message->text) {
-      $action0 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("了解", "わかった");
+      $action0 = new MessageTemplateActionBuilder("了解", "わかった");
 
          $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("あなたの役職は", "人狼です", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action0]);
          $button_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("あなたの役職が表示されてるよ", $button);
@@ -45,7 +45,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
     } else if ("@join" == $event->message->text) {
-      
+
     } else if ("text" == $event->message->type) {
 
         //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
