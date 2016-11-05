@@ -47,7 +47,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
     } else if ("@join" == $event->message->text) {
       $columns = []; // カルーセル型カラムを5つ追加する配列
       $a=0;
-      for($i=0;$i<5;$i++;){
+      for($i=0;$i<5;$i++){
     // カルーセルに付与するボタンを作る
       $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("クリックしてね", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg");
     // カルーセルのカラムを作成する
