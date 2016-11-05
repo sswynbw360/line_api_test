@@ -25,7 +25,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
     if ("@myjob" == $event->message->text) {
       $action0 = new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("了解", "わかった");
 
-         $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("あなたの役職は", "人狼です", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", $action0);
+         $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("あなたの役職は", "人狼です", "https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action0]);
          $button_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("あなたの役職が表示されてるよ", $button);
 
 
