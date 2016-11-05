@@ -49,7 +49,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
       $a=0;
       while(true){
     // カルーセルに付与するボタンを作る
-      $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("クリックしてね", 'あqswjdjks' );
+      $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("クリックしてね", "http://www.nicovideo.jp/ranking");
     // カルーセルのカラムを作成する
       $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("タイトル(40文字以内)", "追加文","https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg", [$action]);
       $columns[] = $column;
