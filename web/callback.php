@@ -45,8 +45,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
     } else if ("@join" == $event->message->text) {
-
-		}
+      
 
     } else if ("text" == $event->message->type) {
 
