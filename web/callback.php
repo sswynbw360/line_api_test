@@ -44,7 +44,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
     	}*/
 
 
-    } else if ("@join" == $event->message->text) {
+    } else if ("@join" == $message_text) {
 
       $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("お疲れ様！\n飽きたら退出させてね！");
       $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
