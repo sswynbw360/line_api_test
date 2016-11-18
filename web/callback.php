@@ -45,6 +45,9 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
     } else if ("@join" == $event->message->text) {
+      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("あいあいあ");
+      $response = $bot->pushMessage($event->source->userId, $button_message);
+
       $area = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder\AreaBuilder(0,0,1040,1040);
       $action = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder\ImagemapMessageActionBuilder("@member",$area);
       $basesize = new \LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040,1040);
