@@ -45,24 +45,11 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
 
 
     } else if ("@join" == $event->message->text) {
-      $columns = []; // カルーセル型カラムを5つ追加する配列
-      $a=0;
-      for($i=0;$i<5;$i++){
-    // カルーセルに付与するボタンを作る
-      $action = new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("https://" . $_SERVER['SERVER_NAME'] . "/kyojin.jpeg","クリックしてね","https://www.hivelocity.co.jp/wp-content/uploads/2015/09/001.jpg");
-    // カルーセルのカラムを作成する
-      $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("https://www.hivelocity.co.jp/wp-content/uploads/2015/09/001.jpg","タイトル(40文字以内)","あああああああ" , [$action]);
-      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("$a");
-      $response = $bot->pushMessage($event->source->userId, $textMessageBuilder);
-      $columns[] = $column;
-      $a++;
-    }
-// カラムの配列を組み合わせてカルーセルを作成する
-      $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder("アババババば",$columns);
-// カルーセルを追加してメッセージを作る
-      $carousel_message = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("メッセージのタイトル", $carousel);
-      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("");
-      $response = $bot->pushMessage($event->source->userId, $carousel_message);
+      $area = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder\AreaBuilder(0,0,1040,1040);
+      $action = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder\ImagemapMessageActionBuilder("@member",$area);
+      $basesize = new \LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040,1040);
+      $imagemap = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder("https://" . $_SERVER['SERVER_NAME'] . "/","エラー","$basesize","$action");
+      $response = $bot->pushMessage($event->source->userId, $imagemap);
 
     } else if ("text" == $event->message->type) {
 
