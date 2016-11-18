@@ -52,7 +52,7 @@ if ("message" == $event->type) {            //一般的なメッセージ(文字
       $area = new \LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0,0,1040,1040);
       $action = new \LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder("@member",$area);
       $basesize = new \LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040,1040);
-      $imagemap = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder("https://" . $_SERVER['SERVER_NAME'] . "/","エラー",(1080,1080),"$action");
+      $imagemap = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder("https://" . $_SERVER['SERVER_NAME'] . "/","エラー",[1080,1080],"$action");
       $response = $bot->pushMessage($event->source->userId, $imagemap);
 
     } else if ("text" == $event->message->type) {
